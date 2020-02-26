@@ -41,6 +41,8 @@ tmpfs           391M     0  391M   0% /run/user/1000
 ```
 Success! It's fast!
 
+I did not have to apply the quirks setting mentioned in the blog post.
+
 Finally:
 * Update the OS using apt
 * Give it a better hostname
