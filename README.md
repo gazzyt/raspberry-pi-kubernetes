@@ -8,4 +8,6 @@ Here are the steps:
 
 [3 Deploying our First Container](3-Deploying-first-container.md)
 
+[4 Deploying the Kubernetes Dashboard](4-Deploying-kubernetes-dashboard.md)
+
 More coming
