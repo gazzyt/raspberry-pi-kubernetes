@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-server
+  namespace: default
+  labels:
+    app: web-server
+spec:
+  selector:
+    matchLabels:
+      app: web-server
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: web-server
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:stable-alpine
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: web-root
+          mountPath: /usr/share/nginx/html
+        ports:
+        - containerPort: 80
+      volumes:
+      - name: web-root
+        persistentVolumeClaim:
+          claimName: local-path-pvc
+
