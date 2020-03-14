@@ -10,4 +10,8 @@ Here are the steps:
 
 [4 Deploying the Kubernetes Dashboard](4-Deploying-kubernetes-dashboard.md)
 
+[5 Deploying NGINX with Local Storage](5-Deploying-nginx-with-local-storage.md)
+
+[6 Adding a Sidecar](6-Adding-sidecar.md)
+
 More coming
