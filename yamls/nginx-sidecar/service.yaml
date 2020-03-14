@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: http-server
+  namespace: default
+  labels:
+    app: http-server
+spec:
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 80
+  selector:
+    app: web-server
+  type: LoadBalancer
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster
+
