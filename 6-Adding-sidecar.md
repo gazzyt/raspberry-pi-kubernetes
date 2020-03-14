@@ -71,3 +71,5 @@ $ curl http://k3sserver:31811/
 <body>This page was served by NGINX running in K3S and synced from github</body>
 </html>
 ```
+
+By default, `git-sync` synchronises every 2 minutes so html changes we push to our repo will be made live within that time.
