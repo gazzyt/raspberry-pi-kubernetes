@@ -14,4 +14,6 @@ Here are the steps:
 
 [6 Adding a Sidecar](6-Adding-sidecar.md)
 
+[7 Adding a Second Node](7-Adding-second-node.md)
+
 More coming
