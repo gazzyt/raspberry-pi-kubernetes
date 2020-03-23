@@ -1,11 +1,12 @@
 We will now add a second node to our cluster. I will use a Raspberry PI 2 with no SSD this time.
-In order for a new node to join a cluster it needs a security token. To get the token run the following on the existing server:
+
+In order for a new node to join a cluster it needs a security token. To get the token, run the following on the existing server:
 
 ```
 pi@k3sserver:~ $sudo cat /var/lib/rancher/k3s/server/node-token
 ```
 
-Then from the new node we run the same install script as we did for the server but adding a couple of parameters that cause this node to join an existing cluster:
+Then from the new node we run the same install script as we did for the server but add a couple of parameters that cause this node to join an existing cluster:
 * K3S_TOKEN - this is the token we got from the server
 * K3S_URL - the url of the K3S server. Port 6443 is the default.
 
