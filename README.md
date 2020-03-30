@@ -16,4 +16,6 @@ Here are the steps:
 
 [7 Adding a Second Node](7-Adding-second-node.md)
 
+[FAQ](FAQ.md)
+
 More coming
