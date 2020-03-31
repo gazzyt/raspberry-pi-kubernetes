@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web-server
+  namespace: default
+  labels:
+    app: web-server
+spec:
+  selector:
+    matchLabels:
+      app: web-server
+  replicas: 2
+  serviceName: http-server
+  template:
+    metadata:
+      labels:
+        app: web-server
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:stable-alpine
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: web-root
+          mountPath: /usr/share/nginx/html
+          subPath: sidecar-content
+        ports:
+        - containerPort: 80
+      - name: git-sync
+        image: lostlakkris/git-sync:latest
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: web-root
+          mountPath: /data
+          subPath: sidecar-content
+        env:
+        - name: REPO
+          value: https://github.com/gazzyt/sidecar-content.git
+  volumeClaimTemplates:
+  - metadata:
+      name: web-root
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      storageClassName: local-path
+      resources:
+        requests:
+          storage: 1Gi
+
