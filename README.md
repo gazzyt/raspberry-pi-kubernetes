@@ -16,6 +16,8 @@ Here are the steps:
 
 [7 Adding a Second Node](7-Adding-second-node.md)
 
+[8 Scaling NGINX](8-Scaling-nginx.md)
+
 [FAQ](FAQ.md)
 
 More coming
